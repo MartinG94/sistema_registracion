@@ -1,6 +1,6 @@
 const fs = require('fs');
-const path = require('path');
 const bcrypt = require('bcrypt');
+const multer = require('multer');
 
 const controller = {
     root: (req, res, next) => {
@@ -20,11 +20,15 @@ const controller = {
         };
         const listaUsuarios = JSON.parse(fs.readFileSync('data/usuarios.json'));
         const cantidadUsuarios = listaUsuarios.length;
+        const nuevoID = cantidadUsuarios + 1;
         const nuevoUsuario = {
+            id: nuevoID,
             nombre: body.nombre,
             apellido: body.apellido,
             email: body.email,
-            password: body.password,
+            deleted: false,
+            password: bcrypt.hashSync(body.password, 12),
+            avatar: req.file.filename,
         };
         listaUsuarios.push(nuevoUsuario);
         fs.writeFileSync('data/usuarios.json', JSON.stringify(listaUsuarios));
