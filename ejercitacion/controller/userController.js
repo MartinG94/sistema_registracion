@@ -17,6 +17,7 @@ const controller = {
         const body = req.body;
         if(body.password != body.repeat_password){
             res.send('Las contraseñas no coinciden!');
+            return;
         };
         const listaUsuarios = JSON.parse(fs.readFileSync('data/usuarios.json'));
         const mailExistente = (listaUsuarios.map( (usuario) => {
@@ -24,6 +25,7 @@ const controller = {
         })).includes(body.email);
         if(mailExistente){
             res.send('El mail ya está registrado!');
+            return;
         };
         const cantidadUsuarios = listaUsuarios.length;
         const nuevoID = cantidadUsuarios + 1;
