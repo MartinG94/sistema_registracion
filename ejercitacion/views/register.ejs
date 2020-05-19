@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <h1> <%= title %> </h1>
-        <form action="index.ejs" method="POST">
+        <form action="index.ejs" method="POST" enctype="multipart/form-data">
 
             <label for="nombre">Nombre</label>
             <input type="text" name="nombre" id="nombre"> <br>
@@ -26,6 +26,10 @@
 
             <label for="repeat_password">Repetir Contraseña</label>
             <input type="password" name="repeat_password" id="repeat_password"> <br>
+
+            <label for="avatar">Avatar</label>
+            <input type="file" name="avatar" id="avatar"> <br>
+            
         </form>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
