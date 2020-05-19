@@ -1,11 +1,1 @@
-[
-    {
-        "id": 1,
-        "nombre": "Martin",
-        "apellido": "Guillen",
-        "email": "correo@correo.com",
-        "deleted": false,
-        "password": "$2b$12$0gFWF3tMyzP39UYi1pXl6.XxM8RmSRaejR3xAsbAuk.zZJPVdPaGi",
-        "avatar": "avatar-1589906801783.jpg"
-    }
-]
+[{"id":1,"nombre":"Martin","apellido":"Guillen","email":"correo@correo.com","deleted":false,"password":"$2b$12$0gFWF3tMyzP39UYi1pXl6.XxM8RmSRaejR3xAsbAuk.zZJPVdPaGi","avatar":"avatar-1589906801783.jpg"},{"id":2,"nombre":"Sol","apellido":"Romero","email":"email@email.com","deleted":false,"password":"$2b$12$qPJ3GGPKbm2kQvGzye2K1.MsNxQDgMR30WOz6N1YT15HBMEDffRja","avatar":"avatar-1589907018489.jpg"}]
