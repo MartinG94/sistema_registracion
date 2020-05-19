@@ -19,6 +19,12 @@ const controller = {
             res.send('Las contraseñas no coinciden!');
         };
         const listaUsuarios = JSON.parse(fs.readFileSync('data/usuarios.json'));
+        const mailExistente = (listaUsuarios.map( (usuario) => {
+            return usuario.email;
+        })).includes(body.email);
+        if(mailExistente){
+            res.send('El mail ya está registrado!');
+        };
         const cantidadUsuarios = listaUsuarios.length;
         const nuevoID = cantidadUsuarios + 1;
         const nuevoUsuario = {
